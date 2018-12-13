@@ -1,0 +1,70 @@
+.title{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 100px;
+    text-align: right;
+    margin-right: 10%;
+    color: darkblue;
+}
+#wolverineCol{
+    width: 275px;
+    height: 270px;
+    background: white;
+    float: left;
+}
+#daredevilCol{
+    width: 275px;
+    height: 270px;
+    background: white;
+    float: left;
+}
+#hulkCol{
+    width: 275px;
+    height: 270px;
+    background: white;
+    float: left;
+}
+#deadpoolCol{
+    width: 275px;
+    height: 270px;
+    background: white;
+    float: left;
+}
+.mutantImage{
+    width: 225px;
+    float: left;
+    padding-left: 25px;
+}
+.text-name{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    height: 25px;
+}   
+#wolverine-health{
+    clear: both;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    height: 25px;
+}
+#daredevil-health{
+    clear: both;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    height: 25px;
+}
+#hulk-health{
+    clear: both;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    height: 25px;
+}
+#deadpool-health{
+    clear: both;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    height: 25px;
+}
