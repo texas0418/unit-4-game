@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Mutant Fight Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -16,44 +18,69 @@
 <body>
 
     <div class="title">Mutant War RPG</div>
-    <div class="fighters">
+    <div class="container">
         <div class="row">
             <div class="col-3" id="wolverineCol">
                 <div class="text-name">Wolverine
                 </div>
-                <img class="mutantImage" id="wolverine" src="assets/images/wolverine.jpg">
-                <div id="wolverine-health"></div>
+                <div class="mutantPicture"><img class="mutantImage" id="wolverine" src="assets/images/wolverine.jpg"></div>
+                <div id="healthWolverine"></div>
             </div>
             <div class="col-3" id="daredevilCol">
                 <div class="text-name">Daredevil
                 </div>
-                <img class="mutantImage" id="daredevil" src="assets/images/daredevil.jpg">
-                <div id="daredevil-health"></div>
+                <div class="mutantPicture"><img class="mutantImage" id="daredevil" src="assets/images/daredevil.jpg"></div>
+                <div id="healthDaredevil"></div>
             </div>
             <div class="col-3" id="hulkCol">
                 <div class="text-name">Hulk
                 </div>
-                <img class="mutantImage" id="hulk" src="assets/images/hulk.jpg">
-                <div id="hulk-health"></div>
+                <div class="mutantPicture"><img class="mutantImage" id="hulk" src="assets/images/hulk.jpg"></div>
+                <div id="heathHulk"></div>
             </div>
             <div class="col-3" id="deadpoolCol">
                 <div class="text-name">Deadpool
                 </div>
-                <img class="mutantImage" id="deadpool" src="assets/images/deadpool.jpg">
-                <div id="deadpool-health"></div>
+                <div class="mutantPicture"><img class="mutantImage" id="deadpool" src="assets/images/deadpool.jpg"></div>
+                <div id="healthDeadpool"></div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12" id="yourCharacter">Your Character</div>
+            <div class="col-12" id="yourCharacter">Enemies Available to Attack</div>
+            <div class="col-12" id="yourCharacter">Fight Section</div>
+            <div id="fightButton" class="text-center">
+            <button class="btn btn-warning btn-xs theme-button">Fight</button></div>
+            <div class="col-12" id="yourCharacter">Defender</div>
+
+
+
+
+        </div>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
 
 
-            var fighters = ["wolverine", "daredevil", "hulk", "deadpool"];
-            for (var i = 0; i < fighters.length; i++) {
+                var wolverine = new Character($("wolverine"), "Wolverine", 120);
+                var daredevil = new Character($("daredevil"), "Daredevil", 100);
+                var hulk = new Character($("hulk"), "Hulk", 150);
+                var deadpool = new Character($("deadpool"), "Deadpool", 180);
+
+                var mutant = ["wolverine", "daredevil", "hulk", "deadpool"];
+                var yourCharacter = {};
+                var yourEnemy = {};
+                var enemyBeaten = [];
+
+                var playerActive = true;
+                var enemyActive = true;
+                var playerPicked = false;
+                var enemyPicked = false;
 
 
             }
 
         </script>
 </body>
-
 </html>

@@ -1,13 +1,32 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .title{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 100px;
+    font-size: 80px;
     text-align: right;
     margin-right: 10%;
     color: darkblue;
+    text-shadow:
+            -1px -1px 0 white,
+            1px -1px 0 white,
+            -1px 1px 0 white,
+            1px 1px 0 white;
+}
+.container {
+    width: 100%;
+    padding-right: 0px;
+    margin-right: 0;
+    margin-left: 10px;
+}
+.row{
+    height:290px;
+    margin: 0;
 }
 #wolverineCol{
-    width: 275px;
-    height: 270px;
+    width: 200px;
+    height: 250px;
     background: white;
     float: left;
     border-style: solid;
@@ -15,8 +34,8 @@
     border-color: darkred;
 }
 #daredevilCol{
-    width: 275px;
-    height: 270px;
+    width: 200px;
+    height: 250px;
     background: white;
     float: left;
     border-style: solid;
@@ -24,8 +43,8 @@
     border-color: darkred;
 }
 #hulkCol{
-    width: 275px;
-    height: 270px;
+    width: 200px;
+    height: 250px;
     background: white;
     float: left;
     border-style: solid;
@@ -33,8 +52,8 @@
     border-color: darkred;
 }
 #deadpoolCol{
-    width: 275px;
-    height: 270px;
+    width: 200px;
+    height: 250px;
     background: white;
     float: left;
     border-style: solid;
@@ -42,9 +61,7 @@
     border-color: darkred;
 }
 .mutantImage{
-    width: 225px;
-    float: left;
-    padding-left: 25px;
+    width: 200px;
 }
 .text-name{
     font-size: 20px;
@@ -79,4 +96,26 @@
     font-weight: bold;
     text-align: center;
     height: 25px;
+}
+#yourCharacter{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    color: white;
+    text-shadow:
+            -1px -1px 0 black,
+            1px -1px 0 black,
+            -1px 1px 0 black,
+            1px 1px 0 black;
+}
+.btn {
+    margin-left: 20px;
+    height: 35px;
+    font-weight: bold;
+}
+.mutantPicture {
+    width: 200px;
+    height: 180px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
 }
