@@ -14,7 +14,7 @@ body {
             -1px 1px 0 white,
             1px 1px 0 white;
 }
-.container {
+.container{
     width: 100%;
     padding-right: 0px;
     margin-right: 0;
@@ -25,7 +25,6 @@ body {
     margin: 0;
 }
 #wolverineCol{
-    width: 200px;
     height: 250px;
     background: white;
     float: left;
@@ -34,7 +33,6 @@ body {
     border-color: darkred;
 }
 #daredevilCol{
-    width: 200px;
     height: 250px;
     background: white;
     float: left;
@@ -43,7 +41,6 @@ body {
     border-color: darkred;
 }
 #hulkCol{
-    width: 200px;
     height: 250px;
     background: white;
     float: left;
@@ -52,7 +49,6 @@ body {
     border-color: darkred;
 }
 #deadpoolCol{
-    width: 200px;
     height: 250px;
     background: white;
     float: left;
@@ -69,38 +65,17 @@ body {
     text-align: center;
     height: 25px;
 }   
-#wolverine-health{
-    clear: both;
+.health{
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    height: 25px;
-}
-#daredevil-health{
-    clear: both;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    height: 25px;
-}
-#hulk-health{
-    clear: both;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    height: 25px;
-}
-#deadpool-health{
-    clear: both;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    height: 25px;
+    margin-bottom: 0;
 }
 #yourCharacter{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 30px;
     color: white;
+    margin-left: 10px;
     text-shadow:
             -1px -1px 0 black,
             1px -1px 0 black,
@@ -108,7 +83,7 @@ body {
             1px 1px 0 black;
 }
 .btn {
-    margin-left: 20px;
+    margin-left: 25px;
     height: 35px;
     font-weight: bold;
 }

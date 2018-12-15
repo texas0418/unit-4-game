@@ -24,25 +24,22 @@
                 <div class="text-name">Wolverine
                 </div>
                 <div class="mutantPicture"><img class="mutantImage" id="wolverine" src="assets/images/wolverine.jpg"></div>
-                <div id="healthWolverine"></div>
-            </div>
+                <p class="health">120</div>
             <div class="col-3" id="daredevilCol">
                 <div class="text-name">Daredevil
                 </div>
                 <div class="mutantPicture"><img class="mutantImage" id="daredevil" src="assets/images/daredevil.jpg"></div>
-                <div id="healthDaredevil"></div>
-            </div>
+                <p class="health">100</div>
             <div class="col-3" id="hulkCol">
                 <div class="text-name">Hulk
                 </div>
                 <div class="mutantPicture"><img class="mutantImage" id="hulk" src="assets/images/hulk.jpg"></div>
-                <div id="heathHulk"></div>
-            </div>
+                <p class="health">150</div>
             <div class="col-3" id="deadpoolCol">
                 <div class="text-name">Deadpool
                 </div>
                 <div class="mutantPicture"><img class="mutantImage" id="deadpool" src="assets/images/deadpool.jpg"></div>
-                <div id="healthDeadpool"></div>
+                <p class="health">180</div>
             </div>
         </div>
         <div class="row">
@@ -50,7 +47,7 @@
             <div class="col-12" id="yourCharacter">Enemies Available to Attack</div>
             <div class="col-12" id="yourCharacter">Fight Section</div>
             <div id="fightButton" class="text-center">
-            <button class="btn btn-warning btn-xs theme-button">Fight</button></div>
+                <button class="btn btn-warning btn-xs theme-button">Fight</button></div>
             <div class="col-12" id="yourCharacter">Defender</div>
 
 
@@ -62,25 +59,40 @@
 
             $(document).ready(function () {
 
+var wolverine = {
+    name: "Wolverine",
+    healthPoint: 120,
+    attackPower: 8,
+    attackIncrease: 8,
+    counterAttk: 25
+}
+var daredevil = {
+    name: "Daredevil",
+    healthPoint: 100,
+    attackPower: 9,
+    attackIncrease: 9,
+    counterAttk: 20
+}
+var hulk = {
+    name: "The Hulk",
+    healthPoint: 150,
+    attackPower: 13,
+    attackIncrease: 13,
+    counterAttk: 30
+}
+var deadpool = {
+    name: "Deadpool",
+    hhealthPoint: 180,
+    attackPower: 10,
+    attackIncrease: 10,
+    counterAttk: 28
+}
 
-                var wolverine = new Character($("wolverine"), "Wolverine", 120);
-                var daredevil = new Character($("daredevil"), "Daredevil", 100);
-                var hulk = new Character($("hulk"), "Hulk", 150);
-                var deadpool = new Character($("deadpool"), "Deadpool", 180);
-
-                var mutant = ["wolverine", "daredevil", "hulk", "deadpool"];
-                var yourCharacter = {};
-                var yourEnemy = {};
-                var enemyBeaten = [];
-
-                var playerActive = true;
-                var enemyActive = true;
-                var playerPicked = false;
-                var enemyPicked = false;
 
 
-            }
+            })
 
         </script>
 </body>
+
 </html>
