@@ -19,80 +19,164 @@
 
     <div class="title">Mutant War RPG</div>
     <div class="container">
-        <div class="row">
-            <div class="col-3" id="wolverineCol">
+        <div class="row" id="hero">
+            <div class="col-3 chooseCharacter" id="wolverineCol">
                 <div class="text-name">Wolverine
                 </div>
                 <div class="mutantPicture"><img class="mutantImage" id="wolverine" src="assets/images/wolverine.jpg"></div>
-                <p class="health">120</div>
-            <div class="col-3" id="daredevilCol">
+                <p class="health">120
+            </div>
+            <div class="col-3 chooseCharacter" id="daredevilCol">
                 <div class="text-name">Daredevil
                 </div>
                 <div class="mutantPicture"><img class="mutantImage" id="daredevil" src="assets/images/daredevil.jpg"></div>
-                <p class="health">100</div>
-            <div class="col-3" id="hulkCol">
-                <div class="text-name">Hulk
+                <p class="health">100
+            </div>
+            <div class="col-3 chooseCharacter" id="hulkCol">
+                <div class="text-name">The Hulk
                 </div>
                 <div class="mutantPicture"><img class="mutantImage" id="hulk" src="assets/images/hulk.jpg"></div>
-                <p class="health">150</div>
-            <div class="col-3" id="deadpoolCol">
+                <p class="health">150
+            </div>
+            <div class="col-3 chooseCharacter" id="deadpoolCol">
                 <div class="text-name">Deadpool
                 </div>
                 <div class="mutantPicture"><img class="mutantImage" id="deadpool" src="assets/images/deadpool.jpg"></div>
-                <p class="health">180</div>
+                <p class="health">180
             </div>
-        </div>
-        <div class="row">
             <div class="col-12" id="yourCharacter">Your Character</div>
-            <div class="col-12" id="yourCharacter">Enemies Available to Attack</div>
-            <div class="col-12" id="yourCharacter">Fight Section</div>
-            <div id="fightButton" class="text-center">
-                <button class="btn btn-warning btn-xs theme-button">Fight</button></div>
-            <div class="col-12" id="yourCharacter">Defender</div>
-
-
-
-
         </div>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript">
+    </div>
+    <div class="container">
+        <div class="col-12" id="yourCharacter">Enemies Available to Attack</div>
+        <div class="enemy"></div>
+        <div class="col-12" id="yourCharacter">Fight Section</div>
+        <div id="fightButton" class="text-center">
+            <button class="btn btn-warning btn-xs theme-button">Fight</button></div>
+        <div class="col-12" id="yourCharacter">Defender</div>
+        <div class="defender"></div>
+    </div>
+    </div>
 
-            $(document).ready(function () {
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
 
-var wolverine = {
-    name: "Wolverine",
-    healthPoint: 120,
-    attackPower: 8,
-    attackIncrease: 8,
-    counterAttk: 25
-}
-var daredevil = {
-    name: "Daredevil",
-    healthPoint: 100,
-    attackPower: 9,
-    attackIncrease: 9,
-    counterAttk: 20
-}
-var hulk = {
-    name: "The Hulk",
-    healthPoint: 150,
-    attackPower: 13,
-    attackIncrease: 13,
-    counterAttk: 30
-}
-var deadpool = {
-    name: "Deadpool",
-    hhealthPoint: 180,
-    attackPower: 10,
-    attackIncrease: 10,
-    counterAttk: 28
-}
+        $(document).ready(function () {
+
+            var wolverine = {
+                name: "Wolverine",
+                healthPoint: 120,
+                attackPower: 8,
+                attackIncrease: 8,
+                counterAttk: 25
+            }
+            var daredevil = {
+                name: "Daredevil",
+                healthPoint: 100,
+                attackPower: 9,
+                attackIncrease: 9,
+                counterAttk: 20
+            }
+            var hulk = {
+                name: "The Hulk",
+                healthPoint: 150,
+                attackPower: 13,
+                attackIncrease: 13,
+                counterAttk: 30
+            }
+            var deadpool = {
+                name: "Deadpool",
+                healthPoint: 180,
+                attackPower: 10,
+                attackIncrease: 10,
+                counterAttk: 28
+            }
+            var chooseMutant = false;
+            var daredevil = $("#daredevilCol");
+            var hulk = $("#hulkCol");
+            var wolverine = $("#wolverineCol");
+            var deadpool = $("#deadpoolCol");
+            var enemy = [];
+            $("#wolverine").on("click", function () {
+
+                if (chooseMutant == true) {
+                    return;
+                }
+                $("#daredevilCol").appendTo(".enemy");
+                enemy.push("daredevil");
+                $("#hulkCol").appendTo(".enemy");
+                enemy.push("hulk");
+                $("#deadpoolCol").appendTo(".enemy");
+                enemy.push("deadpool");
+                activeChar = wolverine;
+                chooseMutant = true;
+            });
+            $("#daredevil").on("click", function () {
+                if (chooseMutant == true) {
+                    return;
+                }
+                $("#wolverineCol").appendTo(".enemy");
+                enemy.push("wolverine");
+                $("#hulkCol").appendTo(".enemy");
+                enemy.push("hulk");
+                $("#deadpoolCol").appendTo(".enemy");
+                enemy.push("deadpool");
+                activeChar = daredevil;
+                chooseMutant = true;
+            });
+            $("#hulk").on("click", function () {
+                if (chooseMutant == true) {
+                    return;
+                }
+                $("#wolverineCol").appendTo(".enemy");
+                enemy.push("wolverine");
+                $("#daredevilCol").appendTo(".enemy");
+                enemy.push("daredevil");
+                $("#deadpoolCol").appendTo(".enemy");
+                enemy.push("deadpool");
+                activeChar = hulk;
+                chooseMutant = true;
+            });
+            $("#deadpool").on("click", function () {
+                if (chooseMutant == true) {
+                    return;
+                }
+                $("#wolverineCol").appendTo(".enemy");
+                enemy.push("wolverine");
+                $("#daredevilCol").appendTo(".enemy");
+                enemy.push("daredevil");
+                $("#hulkCol").appendTo(".enemy");
+                enemy.push("hulk");
+                activeChar = deadpool;
+                chooseMutant = true;
+            });
+
+            var chooseEnemy = false;
+
+            $("#wolverine").on("click", function () {
+                if (chooseEnemy == true); {
+                    return;
+                }
+                $("#wolverineCol").appendTo(".defender");
+                activeEnemy = wolverine;
+                chooseEnemy = true;
+            });
+            ("#daredevil").on("click", function () {
+                if (chooseEnemy == true); {
+                    return;
+                }
+                $("#daredevilCol").appendTo(".defender");
+                activeEnemy = daredevil;
+                chooseEnemy = true;
+            });
+        })
+        
 
 
 
-            })
 
-        </script>
+
+    </script>
 </body>
 
 </html>

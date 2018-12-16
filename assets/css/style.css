@@ -4,7 +4,7 @@ body {
 }
 .title{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 80px;
+    font-size: 70px;
     text-align: right;
     margin-right: 10%;
     color: darkblue;
@@ -25,7 +25,7 @@ body {
     margin: 0;
 }
 #wolverineCol{
-    height: 250px;
+    height: 200px;
     background: white;
     float: left;
     border-style: solid;
@@ -33,7 +33,7 @@ body {
     border-color: darkred;
 }
 #daredevilCol{
-    height: 250px;
+    height: 200px;
     background: white;
     float: left;
     border-style: solid;
@@ -41,7 +41,7 @@ body {
     border-color: darkred;
 }
 #hulkCol{
-    height: 250px;
+    height: 200px;
     background: white;
     float: left;
     border-style: solid;
@@ -49,7 +49,7 @@ body {
     border-color: darkred;
 }
 #deadpoolCol{
-    height: 250px;
+    height: 200px;
     background: white;
     float: left;
     border-style: solid;
@@ -57,7 +57,7 @@ body {
     border-color: darkred;
 }
 .mutantImage{
-    width: 200px;
+    width: 175px;
 }
 .text-name{
     font-size: 20px;
@@ -73,23 +73,26 @@ body {
 }
 #yourCharacter{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 30px;
+    width: 1125px;
+    font-size: 25px;
     color: white;
-    margin-left: 10px;
+    float: left;
     text-shadow:
             -1px -1px 0 black,
             1px -1px 0 black,
             -1px 1px 0 black,
             1px 1px 0 black;
 }
-.btn {
+.btn{
+    float: left;
     margin-left: 25px;
     height: 35px;
     font-weight: bold;
 }
-.mutantPicture {
-    width: 200px;
-    height: 180px;
+.mutantPicture{
+    flex: auto;
+    width: 175px;
+    height: 140px;
     display: flex;
     margin-left: auto;
     margin-right: auto;
