@@ -19,33 +19,33 @@
 
     <div class="title">Mutant War RPG</div>
     <div class="container">
-        <div class="row" id="hero">
-            <div class="col-3 chooseCharacter" id="wolverineCol">
-                <div class="text-name">Wolverine
-                </div>
-                <div class="mutantPicture"><img class="mutantImage" id="wolverine" src="assets/images/wolverine.jpg"></div>
-                <p class="health">120
+        <div class="col-3 chooseCharacter" id="wolverineCol">
+            <div class="text-name">Wolverine
             </div>
-            <div class="col-3 chooseCharacter" id="daredevilCol">
-                <div class="text-name">Daredevil
-                </div>
-                <div class="mutantPicture"><img class="mutantImage" id="daredevil" src="assets/images/daredevil.jpg"></div>
-                <p class="health">100
-            </div>
-            <div class="col-3 chooseCharacter" id="hulkCol">
-                <div class="text-name">The Hulk
-                </div>
-                <div class="mutantPicture"><img class="mutantImage" id="hulk" src="assets/images/hulk.jpg"></div>
-                <p class="health">150
-            </div>
-            <div class="col-3 chooseCharacter" id="deadpoolCol">
-                <div class="text-name">Deadpool
-                </div>
-                <div class="mutantPicture"><img class="mutantImage" id="deadpool" src="assets/images/deadpool.jpg"></div>
-                <p class="health">180
-            </div>
-            <div class="col-12" id="yourCharacter">Your Character</div>
+            <div class="mutantPicture"><img class="mutantImage" id="wolverine" src="assets/images/wolverine.jpg"></div>
+            <p class="health">120
         </div>
+        <div class="col-3 chooseCharacter" id="daredevilCol">
+            <div class="text-name">Daredevil
+            </div>
+            <div class="mutantPicture"><img class="mutantImage" id="daredevil" src="assets/images/daredevil.jpg"></div>
+            <p class="health">100
+        </div>
+        <div class="col-3 chooseCharacter" id="hulkCol">
+            <div class="text-name">The Hulk
+            </div>
+            <div class="mutantPicture"><img class="mutantImage" id="hulk" src="assets/images/hulk.jpg"></div>
+            <p class="health">150
+        </div>
+        <div class="col-3 chooseCharacter" id="deadpoolCol">
+            <div class="text-name">Deadpool
+            </div>
+            <div class="mutantPicture"><img class="mutantImage" id="deadpool" src="assets/images/deadpool.jpg"></div>
+            <p class="health">180
+        </div>
+        <div class="col-12" id="yourCharacter">Your Character</div>
+        <div class="chosen"></div>
+    </div>
     </div>
     <div class="container">
         <div class="col-12" id="yourCharacter">Enemies Available to Attack</div>
@@ -53,6 +53,11 @@
         <div class="col-12" id="yourCharacter">Fight Section</div>
         <div id="fightButton" class="text-center">
             <button class="btn btn-warning btn-xs theme-button">Fight</button></div>
+        <div class="col-12 fight-info">
+            <p class="attack-info"></p>
+            <p class="counterattack-info"></p>
+            <p class="info"></p>
+        </div>
         <div class="col-12" id="yourCharacter">Defender</div>
         <div class="defender"></div>
     </div>
@@ -95,113 +100,139 @@
             var enemy = [];
             var name = "";
             var defenderChosen = false;
-            var chooseEnemy = false;
+
+            function restart() {
+                location.reload();
+
+            }
 
 
             $("#wolverine").on("click", function () {
-                if (chooseMutant == true) {
-                    return;
+                if (chooseMutant == false) {
+                    $("#wolverineCol").appendTo(".chosen");
+                    $("#daredevilCol").appendTo(".enemy");
+                    enemy.push("daredevil");
+                    $("#hulkCol").appendTo(".enemy");
+                    enemy.push("hulk");
+                    $("#deadpoolCol").appendTo(".enemy");
+                    enemy.push("deadpool");
+                    activeChar = wolverine;
+                    chooseMutant = true;
+                    name = "wolverine";
                 }
-                $("#daredevilCol").appendTo(".enemy");
-                enemy.push("daredevil");
-                $("#hulkCol").appendTo(".enemy");
-                enemy.push("hulk");
-                $("#deadpoolCol").appendTo(".enemy");
-                enemy.push("deadpool");
-                activeChar = wolverine;
-                chooseMutant = true;
-                name = "wolverine";
             });
             $("#daredevil").on("click", function () {
-                if (chooseMutant == true) {
-                    return;
+                if (chooseMutant == false) {
+                    $("#daredevilCol").appendTo(".chosen");
+                    $("#wolverineCol").appendTo(".enemy");
+                    enemy.push("wolverine");
+                    $("#hulkCol").appendTo(".enemy");
+                    enemy.push("hulk");
+                    $("#deadpoolCol").appendTo(".enemy");
+                    enemy.push("deadpool");
+                    activeChar = daredevil;
+                    chooseMutant = true;
+                    name = "daredevil";
                 }
-                $("#wolverineCol").appendTo(".enemy");
-                enemy.push("wolverine");
-                $("#hulkCol").appendTo(".enemy");
-                enemy.push("hulk");
-                $("#deadpoolCol").appendTo(".enemy");
-                enemy.push("deadpool");
-                activeChar = daredevil;
-                chooseMutant = true;
-                name = "daredevil";
             });
             $("#hulk").on("click", function () {
-                if (chooseMutant == true) {
-                    return;
+                if (chooseMutant == false) {
+                    $("#hulkCol").appendTo(".chosen");
+                    $("#wolverineCol").appendTo(".enemy");
+                    enemy.push("wolverine");
+                    $("#daredevilCol").appendTo(".enemy");
+                    enemy.push("daredevil");
+                    $("#deadpoolCol").appendTo(".enemy");
+                    enemy.push("deadpool");
+                    activeChar = hulk;
+                    chooseMutant = true;
+                    name = "hulk";
                 }
-                $("#wolverineCol").appendTo(".enemy");
-                enemy.push("wolverine");
-                $("#daredevilCol").appendTo(".enemy");
-                enemy.push("daredevil");
-                $("#deadpoolCol").appendTo(".enemy");
-                enemy.push("deadpool");
-                activeChar = hulk;
-                chooseMutant = true;
-                name = "hulk";
             });
             $("#deadpool").on("click", function () {
-                if (chooseMutant == true) {
-                    return;
-                }
-                $("#wolverineCol").appendTo(".enemy");
-                enemy.push("wolverine");
-                $("#daredevilCol").appendTo(".enemy");
-                enemy.push("daredevil");
-                $("#hulkCol").appendTo(".enemy");
-                enemy.push("hulk");
-                activeChar = deadpool;
-                chooseMutant = true;
-                name = "deadpool";
-            });  
+                if (chooseMutant == false) {
+                    $("#huldeadpoolColkCol").appendTo(".chosen");
+                    $("#wolverineCol").appendTo(".enemy");
+                    enemy.push("wolverine");
+                    $("#daredevilCol").appendTo(".enemy");
+                    enemy.push("daredevil");
+                    $("#hulkCol").appendTo(".enemy");
+                    enemy.push("hulk");
+                    activeChar = deadpool;
+                    chooseMutant = true;
+                    name = "deadpool";
 
-           
+                }
+            });
+
+
             $("#wolverine").on("click", function () {
-                if (defenderChosen === false){
-                    if (enemy.indexOf("wolverine") > -1){
+                if (defenderChosen == false) {
+                    if (enemy.indexOf("wolverine") > -1) {
                         $("#wolverineCol").appendTo(".defender");
                         activeEnemy = wolverine;
                         defenderChosen = true;
-                        chooseEnemy = true;
                     }
                 }
             });
             $("#daredevil").on("click", function () {
-                if (defenderChosen === false) {
+                if (defenderChosen == false) {
                     if (enemy.indexOf("daredevil") > -1) {
                         $("#daredevilCol").appendTo(".defender");
                         activeEnemy = daredevil;
                         defenderChosen = true;
-                        chooseEnemy = true;
                     }
                 }
             });
             $("#hulk").on("click", function () {
-                if (defenderChosen === false) {
+                if (defenderChosen == false) {
                     if (enemy.indexOf("hulk") > -1) {
                         $("#hulkCol").appendTo(".defender");
                         activeEnemy = hulk;
                         defenderChosen = true;
-                        chooseEnemy = true;
                     }
                 }
             });
             $("#deadpool").on("click", function () {
-                if (defenderChosen === false) {
+                if (defenderChosen == false) {
                     if (enemy.indexOf("deadpool") > -1) {
                         $("#deadpoolCol").appendTo(".defender");
                         activeEnemy = deadpool;
                         defenderChosen = true;
-                        chooseEnemy = true;
+                    }
+                }
+            });
+
+            $('.btn').click(attack);
+            function attack() {
+                activeChar.healthPoint -= activeEnemy.counterAttk;
+                activeEnemy.healthPoint -= activeChar.attackPower;
+                activeChar.attackPower += activeChar.attackIncrease;
+                $(".chosen .health").html(activeChar.healthPoint);
+                $(".defender .health").html(activeEnemy.healthPoint);
+                $(".attack-info").html("You attacked " + activeEnemy.name + " for " + activeChar.attackPower + " damage.");
+                $(".counterattack-info").html("You were counter-attacked by " + activeEnemy.name + " for " + activeEnemy.counterAttk + " damage.");
+                if (activeChar.healthPoint < 1 || activeEnemy.healthPoint < 1) {
+                    if (activeChar.healthPoint < 1) {
+                        $(".info").html("You have lost the fight!");
+                        $(".btn").remove();
+                        $(".fight-info").append('<button class="restart btn btn-danger">Restart</button>');
+                        $(".restart").click(restart);
+                    } else if (activeEnemy.healthPoint < 1) {
+                        $(".info").html("You have beaten " + activeEnemy.name + "! Pick your next opponent");
+                        $(".defender").remove();
+                        $(".btn").remove();
+                        defenderChosen == false;
+                
+                        
+                        
                     }
                 }
             }
-            
-            )
         })
-    
-       
-    
+
+
+
 
     </script>
 </body>
