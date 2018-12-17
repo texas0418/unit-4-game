@@ -57,7 +57,7 @@ body {
     border-color: darkred;
 }
 .mutantImage{
-    width: 175px;
+    width: 155px;
 }
 .text-name{
     font-size: 20px;
@@ -91,7 +91,7 @@ body {
 }
 .mutantPicture{
     flex: auto;
-    width: 175px;
+    width: 155px;
     height: 140px;
     display: flex;
     margin-left: auto;

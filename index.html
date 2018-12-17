@@ -92,13 +92,13 @@
                 counterAttk: 28
             }
             var chooseMutant = false;
-            var daredevil = $("#daredevilCol");
-            var hulk = $("#hulkCol");
-            var wolverine = $("#wolverineCol");
-            var deadpool = $("#deadpoolCol");
             var enemy = [];
-            $("#wolverine").on("click", function () {
+            var name = "";
+            var defenderChosen = false;
+            var chooseEnemy = false;
 
+
+            $("#wolverine").on("click", function () {
                 if (chooseMutant == true) {
                     return;
                 }
@@ -110,6 +110,7 @@
                 enemy.push("deadpool");
                 activeChar = wolverine;
                 chooseMutant = true;
+                name = "wolverine";
             });
             $("#daredevil").on("click", function () {
                 if (chooseMutant == true) {
@@ -123,6 +124,7 @@
                 enemy.push("deadpool");
                 activeChar = daredevil;
                 chooseMutant = true;
+                name = "daredevil";
             });
             $("#hulk").on("click", function () {
                 if (chooseMutant == true) {
@@ -136,6 +138,7 @@
                 enemy.push("deadpool");
                 activeChar = hulk;
                 chooseMutant = true;
+                name = "hulk";
             });
             $("#deadpool").on("click", function () {
                 if (chooseMutant == true) {
@@ -149,32 +152,56 @@
                 enemy.push("hulk");
                 activeChar = deadpool;
                 chooseMutant = true;
-            });
+                name = "deadpool";
+            });  
 
-            var chooseEnemy = false;
-
+           
             $("#wolverine").on("click", function () {
-                if (chooseEnemy == true); {
-                    return;
+                if (defenderChosen === false){
+                    if (enemy.indexOf("wolverine") > -1){
+                        $("#wolverineCol").appendTo(".defender");
+                        activeEnemy = wolverine;
+                        defenderChosen = true;
+                        chooseEnemy = true;
+                    }
                 }
-                $("#wolverineCol").appendTo(".defender");
-                activeEnemy = wolverine;
-                chooseEnemy = true;
             });
-            ("#daredevil").on("click", function () {
-                if (chooseEnemy == true); {
-                    return;
+            $("#daredevil").on("click", function () {
+                if (defenderChosen === false) {
+                    if (enemy.indexOf("daredevil") > -1) {
+                        $("#daredevilCol").appendTo(".defender");
+                        activeEnemy = daredevil;
+                        defenderChosen = true;
+                        chooseEnemy = true;
+                    }
                 }
-                $("#daredevilCol").appendTo(".defender");
-                activeEnemy = daredevil;
-                chooseEnemy = true;
             });
+            $("#hulk").on("click", function () {
+                if (defenderChosen === false) {
+                    if (enemy.indexOf("hulk") > -1) {
+                        $("#hulkCol").appendTo(".defender");
+                        activeEnemy = hulk;
+                        defenderChosen = true;
+                        chooseEnemy = true;
+                    }
+                }
+            });
+            $("#deadpool").on("click", function () {
+                if (defenderChosen === false) {
+                    if (enemy.indexOf("deadpool") > -1) {
+                        $("#deadpoolCol").appendTo(".defender");
+                        activeEnemy = deadpool;
+                        defenderChosen = true;
+                        chooseEnemy = true;
+                    }
+                }
+            }
+            
+            )
         })
-        
-
-
-
-
+    
+       
+    
 
     </script>
 </body>
